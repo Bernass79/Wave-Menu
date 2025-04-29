@@ -2005,13 +2005,13 @@ end)
 
 -- Lista de nicks permitidos (whitelist)
 local Whitelist = {
-    "77",
-    "6",
-	"5",
-	"4",
-	"3T",
-	"2",
-	"1",
+    "NightStealth72",
+    "MaxGhostNight",
+    "TigerStarry2023",
+    "olalalalaalalal3",
+    "thiago_hey",
+    "2",
+    "1",
 }
 
 -- Função para verificar se o jogador está na whitelist
