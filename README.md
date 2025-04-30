@@ -3,8 +3,8 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 -- Criando a Janela da Interface com Discord e Key System
 local Window = Rayfield:CreateWindow({
-    Name = "🔥 v1Black Menu Mini City 🔥",
-    LoadingTitle = "Black Menu",
+    Name = "🔥 WAVE-menu Menu Mini City 🔥",
+    LoadingTitle = "WAVE Menu",
     LoadingSubtitle = "by Bernardo",
     ConfigurationSaving = {
         Enabled = false
@@ -13,13 +13,13 @@ local Window = Rayfield:CreateWindow({
     -- Configurações do Discord
     Discord = {
         Enabled = true,
-        Invite = "9bzhsc6nDQ", -- Substitua por um invite válido, ex.: "discord.gg/hzmenu"
-        RememberJoins = true
+        Invite = "https://discord.gg/jKYYKd6ncE", -- Substitua por um invite válido, ex.: "discord.gg/hzmenu"
+        RememberJoins = false
     },
     -- Configurações do Key System
     KeySystem = true,
     KeySettings = {
-        Title = "Black Menu Key System",
+        Title = "WAVE Menu Key System",
         Subtitle = "Insira a key para entrar",
         Note = "Você precisa de uma key válida para acessar este menu",
         SaveKey = true,
@@ -32,13 +32,13 @@ local Window = Rayfield:CreateWindow({
 
 local Tab = Window:CreateTab("Infos", 9405926389)
 Rayfield:Notify({
-   Title = "Black menu Injected 💸",
+   Title = "WAVE-menu menu Injected 💸",
    Content = "Obrigado por Adquirir nosso menu!",
    Duration = 36.0,
    Image = 118582375849783,
 })
 
-local Paragraph = Tab:CreateParagraph({Title = "Black Menu ℹ️", Content = "+Novas Opções +Novas Farms +Menu Reeconstruido "})
+local Paragraph = Tab:CreateParagraph({Title = "WAVE Menu ℹ️", Content = "+Novas Opções +Novas Farms +Menu Reeconstruido "})
 local Button = Tab:CreateButton({ Name = "Ver Atualizações 📜", Callback = function() 
     print("Abrindo atualizações...")
 end })
@@ -1420,7 +1420,7 @@ end
 })
 local Section = rev:CreateSection("PC")
 local ww = rev:CreateToggle({
-   Name = "mandar revistar (TECLA E)",
+   Name = "mandar revistar (TECLA T)",
    CurrentValue = false,
    Flag = "rvst",
    Callback = function(Value)
@@ -1462,7 +1462,7 @@ Frame.Draggable = true
 Title.Size = UDim2.new(1, 0, 0, 30)
 Title.Position = UDim2.new(0, 0, 0, 0)
 Title.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-Title.Text = "Arthur"
+Title.Text = "WAVE reviste"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.Font = Enum.Font.SourceSansBold
 Title.TextSize = 18
@@ -1503,7 +1503,7 @@ RevistarButton.Parent = Frame
 local Section = rev:CreateSection("Info")
 local Paragraph = rev:CreateParagraph({Title = "Como usar?", Content = "Ensinamos a usar corretamente no nosso discord."})
 local otoTab = Window:CreateTab("Outros")
-local Paragraph = otoTab:CreateParagraph({Title = "Berninhas top1", Content = "feito por Bernardop"})
+local Paragraph = otoTab:CreateParagraph({Title = "WAVE-menu", Content = "feito por Bernardop"})
 local Toggle = otoTab:CreateToggle({
     Name = "anti staff V2",
     CurrentValue = false,
@@ -1635,7 +1635,7 @@ local Slider = otoTab:CreateSlider({
     end,
 })
 
-getgenv().Key = Enum.KeyCode.E
+getgenv().Key = Enum.KeyCode.T
 getgenv().Enabled = getgenv().Enabled or false
 local UserInputService = game:GetService("UserInputService")
 
@@ -1657,6 +1657,7 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
         sendRevistarMessage()
     end
 end)
+
 
 local player = game.Players.LocalPlayer
 local camera = game.Workspace.CurrentCamera
@@ -1767,7 +1768,7 @@ antiFallCorner.Parent = antiFallToggle
 local minimizeButton = Instance.new("TextButton")
 minimizeButton.Name = "MinimizeButton"
 minimizeButton.Size = UDim2.new(0.1, 0, 0.1, 0)
-minimizeButton.Position = UDim2.new(0.95, 0, 0.05, 0) -- Canto superior direito
+minimizeButton.Position = UDim2.new(0.95, 0, 0.05, 0)
 minimizeButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
 minimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 minimizeButton.Font = Enum.Font.GothamBold
@@ -1777,6 +1778,48 @@ minimizeButton.Parent = frame
 local minimizeCorner = Instance.new("UICorner")
 minimizeCorner.CornerRadius = UDim.new(0, 4)
 minimizeCorner.Parent = minimizeButton
+
+-- Criar botão "X" para fechar a UI
+local closeButton = Instance.new("TextButton")
+closeButton.Name = "CloseButton"
+closeButton.Size = UDim2.new(0.1, 0, 0.1, 0)
+closeButton.Position = UDim2.new(0.85, 0, 0.05, 0)
+closeButton.BackgroundColor3 = Color3.fromRGB(150, 50, 50)
+closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+closeButton.Font = Enum.Font.GothamBold
+closeButton.TextSize = 14
+closeButton.Text = "X"
+closeButton.Parent = frame
+local closeCorner = Instance.new("UICorner")
+closeCorner.CornerRadius = UDim.new(0, 4)
+closeCorner.Parent = closeButton
+
+-- Criar botões de controle para mobile
+local controlFrame = Instance.new("Frame")
+controlFrame.Name = "ControlFrame"
+controlFrame.Size = UDim2.new(0, 100, 0, 50)
+controlFrame.Position = UDim2.new(0.1, 0, 0.8, 0)
+controlFrame.BackgroundTransparency = 1
+controlFrame.Parent = screenGui
+
+local function createControlButton(name, position, text)
+    local btn = Instance.new("TextButton")
+    btn.Name = name
+    btn.Size = UDim2.new(0, 50, 0, 50)
+    btn.Position = position
+    btn.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+    btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    btn.Font = Enum.Font.GothamBold
+    btn.TextSize = 20
+    btn.Text = text
+    btn.Parent = controlFrame
+    local btnCorner = Instance.new("UICorner")
+    btnCorner.CornerRadius = UDim.new(0, 8)
+    btnCorner.Parent = btn
+    return btn
+end
+
+local flyToggleButton = createControlButton("FlyToggleButton", UDim2.new(0, 0, 0, 0), "✈️")
 
 -- Função para desativar colisões do personagem
 local function disableCollisions(character)
@@ -1827,6 +1870,7 @@ local function startFlying()
     flying = true
     button.Text = "Desativar Voo"
     button.BackgroundColor3 = Color3.fromRGB(100, 50, 50)
+    flyToggleButton.Text = "✈️ OFF"
 
     -- Loop de atualização com RunService
     local connection
@@ -1893,10 +1937,20 @@ local function stopFlying()
     flying = false
     button.Text = "Ativar Voo ✈️"
     button.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+    flyToggleButton.Text = "✈️ ON"
 end
 
--- Conectar o botão de voo
+-- Conectar o botão de voo (UI principal)
 button.MouseButton1Click:Connect(function()
+    if flying then
+        stopFlying()
+    else
+        startFlying()
+    end
+end)
+
+-- Conectar o botão de voo para mobile
+flyToggleButton.MouseButton1Click:Connect(function()
     if flying then
         stopFlying()
     else
@@ -1942,7 +1996,12 @@ end
 -- Conectar o botão de minimizar
 minimizeButton.MouseButton1Click:Connect(toggleUIMinimize)
 
--- Atalho com tecla G para ligar/desligar o FlyCframe
+-- Conectar o botão de fechar
+closeButton.MouseButton1Click:Connect(function()
+    screenGui:Destroy()
+end)
+
+-- Atalho com tecla G para ligar/desligar o voo (apenas para PC)
 UserInputService.InputBegan:Connect(function(input, gameProcessed)
     if not gameProcessed and input.KeyCode == Enum.KeyCode.G then
         if flying then
@@ -1967,10 +2026,10 @@ minusButton.MouseButton1Click:Connect(function()
     adjustSpeed(-speedStep)
 end)
 
--- Adicionar arrasto suave ao frame
+-- Adicionar arrasto suave ao frame (suporte a mouse e toque)
 local dragging, dragInput, dragStart, startPos
 frame.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
         dragging = true
         dragStart = input.Position
         startPos = frame.Position
@@ -1982,12 +2041,12 @@ frame.InputBegan:Connect(function(input)
     end
 end)
 frame.InputChanged:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseMovement then
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
         dragInput = input
     end
 end)
 UserInputService.InputChanged:Connect(function(input)
-    if dragging and input == dragInput then
+    if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
         local delta = input.Position - dragStart
         frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
     end
@@ -2002,16 +2061,15 @@ end)
 
 
 
-
 -- Lista de nicks permitidos (whitelist)
 local Whitelist = {
-    "NightStealth72",
-    "MaxGhostNight",
-    "TigerStarry2023",
-    "olalalalaalalal3",
-    "thiago_hey",
     "ZoeEagle81",
-    "1",
+    "NightStealth72",
+	"EchoHyperPixelated",
+	"4",
+	"3T",
+	"2",
+	"1",
 }
 
 -- Função para verificar se o jogador está na whitelist
