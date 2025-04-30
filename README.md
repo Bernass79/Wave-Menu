@@ -360,7 +360,6 @@ local Button = Tab:CreateButton({
         end
     end
 })
-
 Tab:CreateSection("Auto farm peça")
 
 -- Botão para salvar posição
@@ -2155,7 +2154,7 @@ local Whitelist = {
     "ZoeEagle81",
     "NightStealth72",
 	"EchoHyperPixelated",
-	"4",
+	"TigerStarry2023",
 	"3T",
 	"2",
 	"1",
