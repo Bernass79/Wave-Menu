@@ -361,6 +361,95 @@ local Button = Tab:CreateButton({
     end
 })
 
+Tab:CreateSection("Auto farm peça")
+
+-- Botão para salvar posição
+local Button = Tab:CreateButton({
+    Name = "Salvar farm Posição da fac",
+    Callback = function()
+        local player = game.Players.LocalPlayer
+        local character = player.Character
+        if character then
+            local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+            if humanoidRootPart then
+                _G.SavedPosition = humanoidRootPart.Position
+                Rayfield:Notify({Title = "Posição Salva", Content = "Sua posição foi salva com sucesso!", Duration = 2})
+            end
+        end
+    end
+})
+
+-- Função para acionar os ProximityPrompts
+local function fireAllProximityPrompts()
+    local objetosMissao = workspace:FindFirstChild("MapaGeral")
+        and workspace.MapaGeral:FindFirstChild("FavelaV2")
+        and workspace.MapaGeral.FavelaV2:FindFirstChild("objetosMissao")
+
+    if objetosMissao then
+        for _, prompt in ipairs(objetosMissao:GetDescendants()) do
+            if prompt:IsA("ProximityPrompt") then
+                prompt.HoldDuration = 0
+                prompt:InputHoldBegin()
+                prompt:InputHoldEnd()
+            end
+        end
+    end
+end
+
+-- Função para encontrar o prompt do jogador
+local function findPlayerProximityPrompt()
+    local playerName = game.Players.LocalPlayer.Name
+    local objetosMissao = workspace:FindFirstChild("MapaGeral")
+        and workspace.MapaGeral:FindFirstChild("FavelaV2")
+        and workspace.MapaGeral.FavelaV2:FindFirstChild("objetosMissao")
+
+    if objetosMissao then
+        for _, prompt in ipairs(objetosMissao:GetDescendants()) do
+            if prompt:IsA("ProximityPrompt") and prompt.Name == playerName then
+                return prompt
+            end
+        end
+    end
+    return nil
+end
+
+-- Toggle para iniciar o farm
+local Button = Tab:CreateToggle({
+    Name = "Ativar Farm",
+    CurrentValue = false,
+    Callback = function(Value)
+        while Value and _G.SavedPosition do
+            local player = game.Players.LocalPlayer
+            local character = player.Character
+            if not character or not character:FindFirstChild("HumanoidRootPart") then
+                break
+            end
+
+            fireAllProximityPrompts()
+            character.HumanoidRootPart.CFrame = CFrame.new(_G.SavedPosition)
+
+            task.wait(0.35)
+
+            game:GetService("ReplicatedStorage"):WaitForChild("RemoteNovos")
+                :WaitForChild("trabalhos"):FireServer("missaoPECAS")
+
+            local playerPrompt = findPlayerProximityPrompt()
+            if playerPrompt and playerPrompt.Parent then
+                character.HumanoidRootPart.CFrame = CFrame.new(playerPrompt.Parent.Position)
+            end
+
+            task.wait(0.2)
+        end
+    end
+})
+
+
+
+
+
+
+
+
 local Tab = Window:CreateTab("Aimbot PC", 15990136399)
 local Button = Tab:CreateButton({ Name = "Aimbot 🎯", Callback = function() 
     print("Aimbot ativado!")
