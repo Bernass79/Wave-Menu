@@ -2010,7 +2010,7 @@ local Whitelist = {
     "TigerStarry2023",
     "olalalalaalalal3",
     "thiago_hey",
-    "2",
+    "ZoeEagle81",
     "1",
 }
 
