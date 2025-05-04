@@ -2156,7 +2156,7 @@ local Whitelist = {
 	"EchoHyperPixelated",
 	"TigerStarry2023",
 	"AddisonCrystalPrimal",
-	"2",
+	"Turbo_Hunter2017",
 	"1",
 }
 
