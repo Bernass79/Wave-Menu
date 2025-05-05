@@ -2157,7 +2157,7 @@ local Whitelist = {
 	"TigerStarry2023",
 	"AddisonCrystalPrimal",
 	"Turbo_Hunter2017",
-	"1",
+	"dglancaperfume",
 }
 
 -- Função para verificar se o jogador está na whitelist
