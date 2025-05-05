@@ -2154,7 +2154,7 @@ local Whitelist = {
     "ZoeEagle81",
     "NightStealth72",
 	"EchoHyperPixelated",
-	"TigerStarry2023",
+	"NeymarJRSilvaCosta10",
 	"AddisonCrystalPrimal",
 	"Turbo_Hunter2017",
 	"dglancaperfume",
