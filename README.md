@@ -2153,8 +2153,6 @@ end)
 local Whitelist = {
     "ZoeEagle81",
     "NightStealth72",
-    "dglancaperfume",
-    "NeymarJRSilvaCosta10",
 }
 
 -- Função para verificar se o jogador está na whitelist
