@@ -2154,6 +2154,7 @@ local Whitelist = {
     "ajkwdiwajdwaidwa",
     "NeymarJRSilvaCosta10",
     "iwdiwadiasdow",
+    "Aleotario_br",
      "EpicDrift2003",
      "Aleotario_br"
 }
