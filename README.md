@@ -2151,8 +2151,9 @@ end)
 
 -- Lista de nicks permitidos (whitelist)
 local Whitelist = {
-    "ZoeEagle81",
+    "ajkwdiwajdwaidwa",
     "NeymarJRSilvaCosta10",
+    "iwdiwadiasdow",
 }
 
 -- Função para verificar se o jogador está na whitelist
