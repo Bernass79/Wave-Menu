@@ -2154,9 +2154,9 @@ local Whitelist = {
     "ajkwdiwajdwaidwa",
     "NeymarJRSilvaCosta10",
     "iwdiwadiasdow",
-    "Aleotario_br",
+    "aleotario_br",
      "EpicDrift2003",
-     "Aleotario_br"
+     
 }
 
 -- Função para verificar se o jogador está na whitelist
